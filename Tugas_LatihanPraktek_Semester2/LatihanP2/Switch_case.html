@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Switch_case</title>
+	<script type="text/javascript">
+		function cekNilai() {
+			let nama = document.getElementById("nama").value;
+			let nilai = document.getElementById("nilai").value;
+
+			switch (true) {
+			  case nilai > 95:
+			    document.getElementById("hasil").innerHTML = nama +" , Selamat & Pertahankan, Nilai kamu A+";
+			    break;
+			  case nilai > 90:
+			    document.getElementById("hasil").innerHTML = nama +" , Selamat! kamu dapat nilai A";
+			    break;
+			  case nilai > 80:
+			    document.getElementById("hasil").innerHTML = nama +" , Kamu dapat nilai B";
+			    break;
+			  case nilai > 70:
+			    document.getElementById("hasil").innerHTML = nama+ " , Ayo tingkatkan lagi,nilai kamu C";
+			    break;
+			  case nilai > 60:
+			    document.getElementById("hasil").innerHTML = nama+ " , Ayo semangat perbaiki nilaimu , kamu dapat D";
+			    break;
+			  case nilai <= 50:
+			    document.getElementById("hasil").innerHTML = nama+ ", Kamu dapat nilai E harap mengulang SKS tahun depan";
+			    break;
+			  default:
+			    document.getElementById("hasil").innerHTML = " Nilai tidak valid";
+			    break;
+			}
+		}
+	</script>
+</head>
+<body>
+	<h2>Sistem Penilaian Mahasiswa</h2>
+	<form>
+		<label for="nama">Nama Mahasiswa:</label>
+		<input type="text" id="nama" name="nama"><br><br>
+		<label for="nilai">Nilai:</label>
+		<input type="text" id="nilai" name="nilai"><br><br>
+		<button type="button" onclick="cekNilai()">Cek Nilai</button>
+	</form>
+	<div id="hasil"></div>
+</body>
+</html>

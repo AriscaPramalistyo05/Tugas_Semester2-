@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tipe Data String</h1>
+    <p>String ada 3 : 
+        <ul>
+            <li>let nama = 'tyo' -> String kutip tunggal </li>
+            <li>let nama = "tyo" -> String kutip ganda</li> 
+             <li>let nama = `tyo` -> String backticks</li> 
+             <li>document.write(`Hasil pertambahan dari ${n1} dan ${n2} adalah ${n1+n2}`) -> String</li>   
+            
+        </ul>
+    </p>
+    <script>
+        let salam = "Hallo";
+        let duo_salam = salam + salam;
+        let kelas = 'Rpl A'
+        let nim = `2022`
+
+        const tanya = "What do you like about sofware?";
+        const n1 = 4;
+        const n2 = 6;
+
+        document.write(kelas + '<br>'); //String Tanda kutip tunggal
+        document.write(duo_salam + "<br>"); //String Tanda kutip ganda
+        document.write(nim + "<br>"); //String backticks
+        document.write(tanya + "<br>");
+        document.write(`Hasil pertambahan dari ${n1} dan ${n2} adalah ${n1+n2}`); //String template 
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nilai Raport Mahasiswa</title>
+</head>
+<body>
+  <form>
+    <label for="nilai">Masukkan nilai:</label>
+    <input type="text" id="nilai" name="nilai">
+    <button type="button" onclick="tampilkanNilai()">Tampilkan nilai</button>
+  </form>
+  <div id="hasil"></div>
+
+  <script>
+    function tampilkanNilai() {
+      let nilai = parseInt(document.getElementById("nilai").value);
+
+      if (nilai >= 90) {
+        document.getElementById("hasil").innerHTML = "Selamat!! Anda mendapatkan Nilai A";
+      } else if (nilai >= 80) {
+        document.getElementById("hasil").innerHTML = "Nilai Anda B";
+      } else if (nilai >= 70) {
+        document.getElementById("hasil").innerHTML = "Nilai Anda C";
+      } else if (nilai >= 60) {
+        document.getElementById("hasil").innerHTML = "Nilai Anda D";
+      } else {
+        document.getElementById("hasil").innerHTML = "Nilai Anda E";
+      }
+    }
+  </script>
+</body>
+</html>

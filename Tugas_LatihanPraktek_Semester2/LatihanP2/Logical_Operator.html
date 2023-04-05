@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical_operator</title>
+</head>
+<body>
+    <h2>Logical Operator</h2>
+        <script>
+            let t = 22;
+            let y = 8;
+            document.write('AND Operators' + '<br>');
+            document.write("1. t (22) < 30 && y (8) > 5 : " + (t < 30 && y > 2 ) + ' -> True && True -> True' +'<br>' ); 
+            document.write("2. t (22) < 100 && y (8) < 2 : " + (t < 100 && y < 2) + ' -> False && True -> False'+'<br>' ); 
+            document.write("3. t (22) > 30 && y (8) > 5 : " + (t > 30 && y > 15) + ' -> False && False -> False' + '<hr>');
+        
+            document.write("OR Operators" + '<br>');
+            document.write('4. t (22) < 30 || y (8) > 5 : ' + (t < 30 || y > 2) + ' -> True || True -> True' + '<br>');
+            document.write("5. t (22) < 100 || y (8) < 2 : " + (t < 100 || y < 2) + ' -> False || True -> False'+'<hr>' ); 
+
+            document.write('NOT Operators' + '<br>');
+            document.write("6. !t (22) < 100 : " + (!(t < 100 )) + '<br>');
+            document.write('7. !t (22) < 30 && y (8) > 5 : ' + (!(t < 30 && y > 2)) + ' -> True && True -> False' + '<br>');
+            </script>
+</body>
+</html>

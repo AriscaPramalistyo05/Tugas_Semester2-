@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Informasi Mahasiswa</title>
+</head>
+<body>
+  <form>
+    <h1>Data diri Mahasiswa</h1>
+    <label for="firstName">First name:</label>
+    <input type="text" id="firstName" name="firstName"><br>
+
+    <label for="lastName">Last name:</label>
+    <input type="text" id="lastName" name="lastName"><br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age"><br>
+
+    <label for="status">Mahasiswa:</label>
+    <input type="checkbox" id="status" name="status"><br>
+
+    <button type="button" onclick="tampilkanInformasi()">Tampilkan informasi</button>
+  </form>
+  <div id="hasil"></div>
+
+  <script>
+    function tampilkanInformasi() {
+      let firstName = document.getElementById("firstName").value;
+      let lastName = document.getElementById("lastName").value;
+      let age = parseInt(document.getElementById("age").value);
+      let status = document.getElementById("status").checked;
+
+      let statusMahasiswa = (status) ? "Mahasiswa" : "Bukan Mahasiswa";
+
+      let result =  "First Name : " + firstName + "<br>" ;
+      result += "Last Name : " + lastName + "<br>";
+      result += " Nama lengkap : " + firstName + " " + lastName + "<br>";
+      result += "Umur: " + age + "<br>";
+      result += "Status: " + statusMahasiswa;
+
+      document.getElementById("hasil").innerHTML = result;
+    }
+  </script>
+</body>
+</html>
