@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <h2>Array</h2>
+    <ul>
+      <li>
+        <h4>Data Hobi= Hiking, Lari, Nonton, Renang</h4>
+      </li>
+      <li>
+        <h4>Data Nama= Tyo, Febri, Arfian, Dito</h4>
+      </li>
+    </ul>
+    <hr />
+
+    <script>
+      document.write("<h5>1. Array delete = menghapus data yg diinginkan</h5>");
+      let aray_hobi = ["Hiking", "Lari", "Nonton", "Renang"];
+      delete aray_hobi[0];
+      document.write(
+        "Output : " + aray_hobi + "<br/>Ket : Data 'Hiking' dihapus <hr/>"
+      );
+
+      document.write("<h5>2. Array splic = Untuk menghapus elemen </h5>");
+      let hobi = ["Hiking", "Lari", "Nonton", "Renang"];
+      hobi.splice("lari", 2);
+      document.write(
+        "Output : " +
+          hobi +
+          "<br/>Ket : Data 'Lari & Hiking' dihapus dimulai, tentukan dulu dari mana data dihapus kemudian pilih berapa data yang ingin dihapus <hr/>"
+      );
+
+      document.write(
+        "<h5>3. Array splic = Array pop = mengeluarkan data terakhir </h5>"
+      );
+      let aray_nama = ["Tyo", "Febri", "Arfian", "Dito"];
+      aray_nama.pop();
+      document.write(
+        "Output : " +
+          aray_nama +
+          "<br/>Ket : Data Terakhir 'Dito' dihapus <hr/>"
+      );
+
+      document.write(
+        "<h5> 4. Array shift & unshift = mengeluarkan & menambahkan data awal </h5>"
+      );
+      let nama = ["Tyo", "Febri", "Arfian", "Dito"];
+      nama.shift();
+      nama.unshift("Hakim");
+      document.write(
+        "Output : " +
+          nama +
+          "<br/>Ket : Data awal 'Tyo' dihapus, kemudian digantikan dengan data 'Hakim' <hr>"
+      );
+    </script>
+  </body>
+</html>
