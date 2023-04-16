@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Toko Online</title>
+  </head>
+  <body bgcolor="#86E7B8">
+    <h1>Kembar Cell</h1>
+    <form>
+      <label for="name"><b>Nama : </b></label>
+      <input
+        type="text"
+        placeholder="Masukkan Nama"
+        id="name"
+        style="font-family: Arial Narrow Bold"
+      /><br /><br />
+
+      <label for="item"><b>Barang : </b> </label>
+      <select id="item">
+        <option value="">
+          <b style="font-family: Arial Narrow Bold">Pilih HP nya</b>
+        </option>
+        <option value="Samsung Galaxy M33 5G">Samsung Galaxy M33 5G</option>
+        <option value="Poco X5 5G">Poco X5 5G</option>
+        <option value="Infinix Zero 20">Infinix Zero 20</option>
+        <option value="Realme 9 Pro">Realme 9 Pro</option>
+        <option value="IQOO Z7x 5G">IQOO Z7x 5G</option></select
+      ><br /><br />
+      <label for="quantity"><b>Jumlah : </b></label>
+      <input
+        type="number"
+        style="font-family: Arial Narrow Bold"
+        placeholder="Masukkan Jmlh Barang"
+        id="quantity"
+      /><br /><br />
+      <label for="member"><b>Member : </b></label>
+      <input type="checkbox" id="member" /><br /><br />
+      <button type="button" onclick="hitungTotal()"><b>Hitung Total</b></button>
+    </form>
+    <br />
+    <div id="output"></div>
+    <script>
+      function hitungTotal() {
+        // Ambil input dari user
+        var name = document.getElementById("name").value;
+        var item = document.getElementById("item").value;
+        var quantity = parseInt(document.getElementById("quantity").value);
+        var isMember = document.getElementById("member").checked;
+
+        // Tentukan harga barang
+        var price;
+        switch (item) {
+          case "Samsung Galaxy M33 5G":
+            price = 33950000;
+            break;
+          case "Poco X5 5G":
+            price = 3390000;
+            break;
+          case "Infinix Zero 20":
+            price = 3499000;
+            break;
+          case "Realme 9 Pro":
+            price = 3208000;
+            break;
+          case "IQOO Z7x 5G":
+            price = 3098000;
+            break;
+          default:
+            price = 0;
+        }
+
+        // Hitung total harga
+        var total = price * quantity;
+
+        // Tentukan diskon untuk member
+        var discount = 0;
+        if (isMember) {
+          discount = 0.1 * total;
+        }
+
+        // Hitung total bayar setelah diskon
+        var grandTotal = total - discount;
+
+        // Tampilkan output
+        var output = "<h2 style='font-family: Arial;'>Detail Pembelian</h2>";
+        output +=
+          "<p style='font-family: Arial; '><strong>Nama:</strong> " +
+          name +
+          "</p>";
+        output +=
+          "<p style='font-family: Arial;'><strong>Barang:</strong> " +
+          item +
+          "</p>";
+        output +=
+          "<p style='font-family: Arial;'><strong>Jumlah:</strong> " +
+          quantity +
+          "</p>";
+        output +=
+          "<p style='font-family: Arial;'><strong>Total Harga:</strong> Rp" +
+          total +
+          "</p>";
+
+        if (isMember) {
+          output +=
+            "<p style='font-family: Arial; '><strong>Diskon (10%): Rp" +
+            discount +
+            "<br>";
+          output +=
+            "<p style='font-family: Arial; '><strong>Total Bayar: Rp" +
+            grandTotal +
+            "<br>";
+        }
+        document.getElementById("output").innerHTML = output;
+      }
+    </script>
+  </body>
+</html>
