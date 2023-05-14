@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Toko HP Online</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      /* Mengatur BG */
+      body {
+        background-color: #e4c988;
+        font-family: "Lucida Sans Unicode", sans-serif;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      /* Mengatur Card Form Input */
+      .card {
+        background-color: #c27664;
+        color: white;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+
+      .card-header {
+        background-color: #b05a7a;
+        padding-top: 20px; /*Mengatur jarak atas */
+        padding-bottom: 1px; /*Mengatur jarak bawah */
+        border-radius: 4px; /*Mengatur Sisi Kotak */
+      }
+
+      .card-body {
+        padding: 20px;
+      }
+
+      .masuk {
+        margin-bottom: 15px;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: 10p;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      select,
+      input[type="number"],
+      input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 10px;
+      }
+
+      table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+         padding: 8px; /*Mengatur jarak antara output dan text output pada tabel kedua */
+        text-align: left;
+        border-bottom: 1px /*Mengatur garis bawah*/ solid #ccc;
+      }
+
+      th:first-child,
+      td:first-child {
+        font-weight: bold;
+      }
+
+      .table-summary td {
+        border-bottom: none;
+      }
+
+      .table-summary td:first-child {
+        font-weight: bold;
+      }
+
+      .table-summary td:last-child {
+        text-align: right;
+      }
+
+      .total-price {
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      .btn-group {
+        margin-top: 20px;
+        text-align: center;
+      }
+      /* Mengatur button Hitung*/
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 0 10px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      /* Mengatur Efek Button Hitung*/
+      .btn:hover {
+        background-color: #ff0000;
+      }
+      /* Mengatur Button Reset */
+      .btn-reset {
+        background-color: #4caf50;
+      }
+      /* Mengatur Efek Button Reset  */
+      .btn-reset:hover {
+        background-color: #00ff00;
+      }
+
+      label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <!-- Header -->
+        <div class="card-header">
+          <h2>Olympus Phone</h2>
+        </div>
+        <!-- Form Input -->
+        <div class="card-body">
+          <form>
+            <!-- Input nama -->
+            <div class="masuk">
+              <label for="name">Nama Pelanggan:</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Masukkan nama pelanggan"
+              />
+            </div>
+
+            <!-- Input pilihan hp -->
+            <div class="masuk">
+              <label for="phone">Pilihan HP:</label>
+              <select id="phone">
+                <option value="">Pilih HP</option>
+                <option value="samsung">Samsung Galaxy A34 5G</option>
+                <option value="xiaomi">Xiaomi 11T</option>
+                <option value="oppo">OPPO RENO 8T</option>
+                <option value="realme">Realme 10 Pro 5G</option>
+                <option value="vivo">Vivo T1 Pro 5G</option>
+              </select>
+            </div>
+
+            <!-- Input Jumlah -->
+            <div class="masuk">
+              <label for="quantity">Jumlah Barang:</label>
+              <input
+                type="number"
+                id="quantity"
+                min="1"
+                placeholder="Masukkan jumlah barang"
+              />
+            </div>
+
+            <!-- Ceklish Member -->
+            <div class="masuk">
+              <label for="member">Member:</label>
+              <input type="checkbox" id="member" />
+            </div>
+
+            <!-- Button Hitung dan Reset -->
+            <div class="masuk">
+              <button class="btn" onclick="calculatePrice()">Hitung</button>
+              <button class="btn btn-reset" onclick="resetForm()">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Form Output -->
+      <div class="card">
+        <div class="card-header">
+          <h2>Ringkasan Pembelian</h2>
+        </div>
+        <div class="card-body">
+          <table>
+            <tr>
+              <td>Jenis HP:</td>
+              <td id="ringkasanJenisHp"></td>
+            </tr>
+            <tr>
+              <td>Harga:</td>
+              <td id="ringkasanHarga"></td>
+            </tr>
+            <tr>
+              <td>Jumlah Barang:</td>
+              <td id="ringkasanJumlahBarang"></td>
+            </tr>
+            <tr>
+              <td>Potongan Harga:</td>
+              <td id="ringkasanPotonganHarga"></td>
+            </tr>
+            <tr>
+              <td>Total Harga:</td>
+              <td id="ringkasanTotalHarga"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Mendapatkan elemen-elemen dari form input
+      const nameInput = document.getElementById("name");
+      const phoneSelect = document.getElementById("phone");
+      const quantityInput = document.getElementById("quantity");
+      const memberCheckbox = document.getElementById("member");
+
+      // Mendapatkan elemen-elemen untuk menampilkan ringkasan pembelian
+      const jenisHpElement = document.getElementById("ringkasanJenisHp");
+      const hargaElement = document.getElementById("ringkasanHarga");
+      const jumlahBarangElement = document.getElementById(
+        "ringkasanJumlahBarang"
+      );
+      const potonganHargaElement = document.getElementById(
+        "ringkasanPotonganHarga"
+      );
+      const totalHargaElement = document.getElementById("ringkasanTotalHarga");
+
+      // Mendefinisikan harga untuk setiap jenis HP
+      const hargaHp = {
+        samsung: 4000000,
+        xiaomi: 4500000,
+        oppo: 5000000,
+        realme: 5500000,
+        vivo: 6000000,
+      };
+
+      // Mendefinisikan harga diskon untuk member
+      const diskonMember = 0.1;
+
+      // Fungsi untuk menghitung harga total
+      function calculatePrice(event) {
+        event.preventDefault();
+        // Mendapatkan nilai input dari form
+        const namaPelanggan = nameInput.value;
+        const jenisHp = phoneSelect.value;
+        const jumlahBarang = parseInt(quantityInput.value);
+        const isMember = memberCheckbox.checked;
+
+        // Menghitung harga total
+        const hargaBarang = hargaHp[jenisHp] * jumlahBarang;
+        let potonganHarga = 0;
+        if (isMember) {
+          potonganHarga = hargaBarang * diskonMember;
+        }
+        const totalHarga = hargaBarang - potonganHarga;
+
+        // Menampilkan ringkasan pembelian
+        jenisHpElement.textContent = jenisHp.toUpperCase();
+        hargaElement.textContent = "Rp " + hargaBarang.toLocaleString();
+        jumlahBarangElement.textContent = jumlahBarang;
+        potonganHargaElement.textContent =
+          "Rp " + potonganHarga.toLocaleString();
+        totalHargaElement.textContent = "Rp " + totalHarga.toLocaleString();
+      }
+
+      // Fungsi untuk mereset form
+      function resetForm(event) {
+        event.preventDefault();
+        nameInput.value = "";
+        phoneSelect.value = "";
+        quantityInput.value = "";
+        memberCheckbox.checked = false;
+
+        // Menghapus ringkasan pembelian
+        jenisHpElement.textContent = "";
+        hargaElement.textContent = "";
+        jumlahBarangElement.textContent = "";
+        potonganHargaElement.textContent = "";
+        totalHargaElement.textContent = "";
+      }
+
+      // Menambahkan event listener untuk tombol "Hitung" dan "Reset"
+      const calculateButton = document.querySelector(".btn");
+      const resetButton = document.querySelector(".btn-reset");
+      calculateButton.addEventListener("click", calculatePrice);
+      resetButton.addEventListener("click", resetForm);
+    </script>
+  </body>
+</html>

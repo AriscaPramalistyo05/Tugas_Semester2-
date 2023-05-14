@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Mengatur BG */
+body {
+    background-color: #e4c988;
+    font-family: "Lucida Sans Unicode", sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Mengatur Card Form Input */
+.card {
+    background-color: #c27664;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Mengatur header card */
+.card-header {
+    background-color: #b05a7a;
+    padding-top: 20px;
+    /*Mengatur jarak atas */
+    padding-bottom: 1px;
+    /*Mengatur jarak bawah */
+    border-radius: 4px;
+    /*Mengatur Sisi Kotak */
+}
+
+/* Mengatur jarak antara text di card body */
+.card-body {
+    padding: 20px;
+}
+
+.masuk {
+    margin-bottom: 15px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10p;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Mengatur ukuran checkbox */
+select,
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px;
+    /*Mengatur jarak antara output dan text output pada tabel kedua */
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+    /*Mengatur garis bawah*/
+}
+
+th:first-child,
+td:first-child {
+    font-weight: bold;
+}
+
+.table-summary td {
+    border-bottom: none;
+}
+
+.table-summary td:first-child {
+    font-weight: bold;
+}
+
+.table-summary td:last-child {
+    text-align: right;
+}
+
+.total-price {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.btn-group {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Mengatur button Hitung*/
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Mengatur Efek Button Hitung*/
+.btn:hover {
+    background-color: #ff0000;
+}
+
+/* Mengatur Button Reset */
+.btn-reset {
+    background-color: #4caf50;
+}
+
+/* Mengatur Efek Button Reset  */
+.btn-reset:hover {
+    background-color: #00ff00;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}

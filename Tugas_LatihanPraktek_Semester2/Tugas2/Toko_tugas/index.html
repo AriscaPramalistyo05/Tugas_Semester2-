@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas4</title>
+
+    <!-- Link ke file external CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <!-- Header -->
+        <div class="card-header">
+          <h2>Olympus Phone</h2>
+        </div>
+        <!-- Form Input -->
+        <div class="card-body">
+          <form>
+            <!-- Input nama -->
+            <div class="masuk">
+              <label for="name">Nama Pelanggan:</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Masukkan nama pelanggan"
+              />
+            </div>
+
+            <!-- Input pilihan hp -->
+            <div class="masuk">
+              <label for="phone">Pilihan HP:</label>
+              <select id="phone">
+                <option value="">Pilih HP</option>
+                <option value="samsung">Samsung Galaxy A34 5G</option>
+                <option value="xiaomi">Xiaomi 11T</option>
+                <option value="oppo">OPPO RENO 8T</option>
+                <option value="realme">Realme 10 Pro 5G</option>
+                <option value="vivo">Vivo T1 Pro 5G</option>
+              </select>
+            </div>
+
+            <!-- Input Jumlah -->
+            <div class="masuk">
+              <label for="quantity">Jumlah Barang:</label>
+              <input
+                type="number"
+                id="quantity"
+                min="1"
+                placeholder="Masukkan jumlah barang"
+              />
+            </div>
+
+            <!-- Ceklish Member -->
+            <div class="masuk">
+              <label for="member">Member:</label>
+              <input type="checkbox" id="member" />
+            </div>
+
+            <!-- Button Hitung dan Reset -->
+            <div class="masuk">
+              <button class="btn" onclick="calculatePrice()">Hitung</button>
+              <button class="btn btn-reset" onclick="resetForm()">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Form Output -->
+      <div class="card">
+        <div class="card-header">
+          <h2>Ringkasan Pembelian</h2>
+        </div>
+        <div class="card-body">
+          <table>
+            <tr>
+              <td>Jenis HP :</td>
+              <td id="ringkasanJenisHp"></td>
+            </tr>
+            <tr>
+              <td>Harga :</td>
+              <td id="ringkasanHarga"></td>
+            </tr>
+            <tr>
+              <td>Jumlah Barang :</td>
+              <td id="ringkasanJumlahBarang"></td>
+            </tr>
+            <tr>
+              <td>Potongan Harga :</td>
+              <td id="ringkasanPotonganHarga"></td>
+            </tr>
+            <tr>
+              <td>Total Harga :</td>
+              <td id="ringkasanTotalHarga"></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- Link ke file External Javascript -->
+    <script src="script.js"></script>
+  </body>
+</html>
