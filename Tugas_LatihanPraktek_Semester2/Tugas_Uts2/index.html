@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Mahasiswa</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <h1>Data Mahasiswa</h1>
+  
+  <div id="result"></div>
+
+  <button onclick="showData()">Tampilkan Data</button>
+  <button onclick="toggleForm()">Tambah Data</button>
+  <button onclick="sortData()">Urutkan Data</button>
+  <button onclick="toggleSearchForm()">Cari Data</button>
+  <button onclick="reverseData()">Reverse Data</button>
+  
+  <form id="dataForm" style="display: none;">
+    <input type="text" id="namaInput" placeholder="Nama Mahasiswa">
+    <input type="number" id="tahunInput" placeholder="Tahun Lahir">
+    <input type="text" id="hpInput" placeholder="No Hp">
+    <button type="button" onclick="addData()">Tambah</button>
+  </form>
+  
+  <div id="searchForm" style="display: none;">
+    <input type="text" id="searchInput" placeholder="Cari Mahasiswa">
+    <button type="button" onclick="searchData()">Cari</button>
+    <button type="button" onclick="toggleSearchForm()">Batal</button>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

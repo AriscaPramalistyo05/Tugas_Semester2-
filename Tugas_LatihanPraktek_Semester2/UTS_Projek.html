@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Mengatur semua komponen body */
+      body {
+        font-family: "Courier New", monospace;
+        color: white;
+      }
+      
+
+      /* Untuk mengatur lebar maks class form dan membuat terpusat secara horizontal */
+      .form {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      /* Mengatur tampilan tabel pada class form */
+      .form label {
+        display: block; /* label akan ditampilkan sebagai blok elemen, sehingga label akan menempati satu baris penuh dan elemen berikutnya akan ditampilkan pada baris baru */
+        margin-bottom: 5px; /* memberikan jarak sebesar 5 piksel antara label dengan elemen berikutnya */
+      }
+
+      /* Mengatur elemen select,input number & text */
+      select,
+      input[type="number"],
+      input[type="text"] {
+        width: 90%;
+        height: 30px; /* Tinggi elemen */
+        margin-bottom: 20px; /* Jarak antar elemen */
+        border: 1px solid #ccc; /* menambahkan border dengan ketebalan 1 piksel dan warna */
+        border-radius: 4px; /* Radius sudut menjadi lingkaran */
+        
+      }
+
+      .form .tombol button {
+        height: 50px;
+        padding: 10px 20px;
+        margin-top: 20px;
+        border-radius: 8px;
+      }
+
+      /* Mengatur ukuran tombol hitung */
+      .htn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 10px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      /* Mengatur warna dan ukuran saat disentuh */
+      .htn:hover {
+        background-color: #ff0000;
+        transform: scale(1.05);
+      }
+
+      /* Mengatur ukuran tombol reset */
+      .htn-rst {
+        background-color: #ff0000;
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 10px;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      /* Mengatur warna dan ukuran saat disentuh */
+      .htn-rst:hover {
+        background-color: #cccccc;
+        transform: scale(1.05);
+        color: black;
+      }
+      /* Mengatur card */
+      .card {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-top: 20px; /* Mengatur Jarak antar card*/
+        border-radius: 5px;
+        background:linear-gradient(#1b263b,#ffd166);
+        position: relative;
+        place-content: center;
+      }
+
+      /* Mengatur ukuran tabel ringkasan nilai */
+      .card table {
+        width: 90%;
+      } /* end tabel ringkasan nilai */
+
+      /* Mengatur Ringkasan Nilai */
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid black;
+        font-style: bolder;
+      }  /* end ringkasan Nilai */
+
+      /* Mengatur Output Nilai akhir,huruf & indeks */
+      #result {
+        font-weight: bold;
+      } /* end result */
+
+      /* Mengatur Tabel nilai akhir, huruf & indeks */
+      
+      #priceTable th {  /* Start Program */
+        background: #999da0;
+        color: rgb(21, 1, 1);
+        text-align: center;
+        font-weight: bolder;
+      }
+
+      #priceTable td {
+        text-align: center;
+        font-weight: bold;
+      } /* End Tabel */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h2>Program Nilai Mahasiswa</h2>
+        </div>
+        <form id="nilaiForm">
+          
+          <!-- Input NIM -->
+          <label for="nim">NIM:</label>
+          <input
+            type="text"
+            id="nim"
+            name="nim"
+            placeholder="Masukkan Nim Mahasiswa"
+            required
+          />
+
+          <!-- Input NAMA -->
+          <label for="nama">NAMA:</label>
+          <input
+            type="text"
+            id="nama"
+            name="nama"
+            placeholder="Masukkan Nama Mahasiswa"
+            required
+          />
+
+          <!-- Pilihan Matkul -->
+          <label for="matkul">Mata Kuliah:</label>
+          <select id="matkul" name="matkul">
+            <option value="">Pilih Matkul</option>
+            <option value="pemrograman">Pemrograman</option>
+            <option value="basis data">Basis Data</option>
+            <option value="jaringan">Jaringan</option>
+            <option value="sistem operasi">Sistem Operasi</option>
+            <option value="algoritma">Algoritma</option>
+            <option value="struktur data">Struktur Data</option>
+            <option value="teori komputasi">Teori Komputasi</option>
+            <option value="grafika komputer">Grafika Komputer</option>
+            <option value="kecerdasan buatan">Kecerdasan Buatan</option>
+            <option value="robotika">Robotika</option>
+          </select>
+
+          <!-- Input Nilai -->
+          <div class="nilai">
+            <label for="uts">Nilai Uts :</label>
+            <input
+              type="number"
+              id="uts"
+              min="0"
+              placeholder="Masukkan nilai Uts"
+            />
+
+            <label for="uas">Nilai Uas :</label>
+            <input
+              type="number"
+              id="uas"
+              min="0"
+              placeholder="Masukkan nilai Uas"
+            />
+
+            <label for="tugas">Tugas Harian :</label>
+            <input
+              type="number"
+              id="tugas"
+              min="0"
+              placeholder="Masukkan nilai tugas"
+            />
+          </div>
+
+          <!-- Button Hitung dan Reset -->
+          <div class="tombol">
+            <button class="htn" type="button" onclick="hitungNilai()">
+              Hitung
+            </button>
+            <button class="htn-rst" type="button" onclick="resetForm()">
+              Reset
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Form Output -->
+      <div class="card">
+        <div class="card-header">
+          <h3>Ringkasan Nilai</h3>
+        </div>
+        <div class="card-body">
+          <table>
+            <tr>
+              <td>Nama:</td>
+              <td id="outputNama"></td>
+            </tr>
+            <tr>
+              <td>NIM:</td>
+              <td id="outputNim"></td>
+            </tr>
+            <tr>
+              <td>Mata Kuliah:</td>
+              <td id="outputMatkul"></td>
+            </tr>
+            <tr>
+              <td>Nilai UTS:</td>
+              <td id="outputUts"></td>
+            </tr>
+            <tr>
+              <td>Nilai UAS:</td>
+              <td id="outputUas"></td>
+            </tr>
+            <tr>
+              <td>Nilai Tugas:</td>
+              <td id="outputTugas"></td>
+            </tr>
+          </table>
+          <table>
+            <tr>
+              <!-- Mengatur jaraknya menggunakan style="width:" -->
+              <div class="card-body-end">
+                <table id="priceTable" style="border: 1px solid black">
+                  <tr>
+                    <th>Nilai Akhir :</th>
+                    <th>Nilai Huruf :</th>
+                    <th>Indeks Nilai :</th>
+                  </tr>
+                  <tr>
+                    <td id="outputAkhir"></td>
+                    <td id="outputNilaiHuruf"></td>
+                    <td id="outputIndeksNilai"></td>
+                  </tr>
+                </table>
+              </div>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- File Js -->
+    <script>
+      function hitungNilai() {
+        const nim = document.getElementById("nim").value;
+        const nama = document.getElementById("nama").value;
+        const matkul = document.getElementById("matkul").value;
+        const uts = parseFloat(document.getElementById("uts").value);
+        const uas = parseFloat(document.getElementById("uas").value);
+        const tugas = parseFloat(document.getElementById("tugas").value);
+
+        const nilaiAkhir = (uts + uas + tugas) / 3;
+
+        let nilaiHuruf;
+        let indeksNilai;
+
+        if (nilaiAkhir >= 85) {
+          nilaiHuruf = "A";
+          indeksNilai = 4.0;
+        } else if (nilaiAkhir >= 79) {
+          nilaiHuruf = "A-";
+          indeksNilai = 3.67;
+        } else if (nilaiAkhir >= 74) {
+          nilaiHuruf = "B+";
+          indeksNilai = 3.33;
+        } else if (nilaiAkhir >= 69) {
+          nilaiHuruf = "B";
+          indeksNilai = 3.0;
+        } else if (nilaiAkhir >= 64) {
+          nilaiHuruf = "B-";
+          indeksNilai = 2.67;
+        } else if (nilaiAkhir >= 59) {
+          nilaiHuruf = "C+";
+          indeksNilai = 2.33;
+        } else if (nilaiAkhir >= 54) {
+          nilaiHuruf = "C";
+          indeksNilai = 2.0;
+        } else if (nilaiAkhir >= 41) {
+          nilaiHuruf = "D";
+          indeksNilai = 1.0;
+        } else {
+          nilaiHuruf = "E";
+          indeksNilai = 0.0;
+        }
+
+        document.getElementById("outputNama").textContent = nama;
+        document.getElementById("outputNim").textContent = nim;
+        document.getElementById("outputMatkul").textContent = matkul;
+        document.getElementById("outputUts").textContent = uts;
+        document.getElementById("outputUas").textContent = uas;
+        document.getElementById("outputTugas").textContent = tugas;
+        document.getElementById("outputAkhir").textContent =
+          nilaiAkhir.toFixed(2);
+        document.getElementById("outputNilaiHuruf").textContent = nilaiHuruf;
+        document.getElementById("outputIndeksNilai").textContent =
+          indeksNilai.toFixed(2);
+      }
+
+      function resetForm() {
+        document.getElementById("nilaiForm").reset();
+        document.getElementById("outputNama").textContent = "";
+        document.getElementById("outputNim").textContent = "";
+        document.getElementById("outputMatkul").textContent = "";
+        document.getElementById("outputUts").textContent = "";
+        document.getElementById("outputUas").textContent = "";
+        document.getElementById("outputTugas").textContent = "";
+        document.getElementById("outputAkhir").textContent = "";
+        document.getElementById("outputNilaiHuruf").textContent = "";
+        document.getElementById("outputIndeksNilai").textContent = "";
+      }
+    </script>
+  </body>
+</html>

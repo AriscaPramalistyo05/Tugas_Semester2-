@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projek_uts</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/0b11e1e341.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container">
+        <nav>
+          <img src="images/merah.png" class="logo" />
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Servies</a></li>
+            <li><a href="#">Portofolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Class text home -->
+        <div class="header-text">
+          <p>UI/UX Designer</p>
+          <h1>
+            Hi, I'm <span>Listyo</span> <br />
+            From <span>Indonesia</span>
+          </h1>
+        </div>
+      </div>
+
+      <!-- Class About -->
+    </div>
+    <div class="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/or.jpg" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+              UI/UX designer adalah seorang profesional yang bertanggung jawab
+              merancang antarmuka pengguna (UI) dan pengalaman pengguna (UX)
+              yang intuitif, menarik, dan berfokus pada kebutuhan pengguna,
+              dengan tujuan meningkatkan keterlibatan dan kepuasan pengguna
+              dalam penggunaan produk atau layanan digital.
+            </p>
+
+            <!-- Deskripsi about me -->
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+              <!-- onclick berfungsi ketika diklik mengarah ke kelas yang dituju. Ex: skills -->
+            </div>
+
+            <!-- Deskripsi skill -->
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>UI/UX</span><br />Designing Web/App</li>
+                <li><span>Web Devolopment</span><br />Web app Devolepment</li>
+                <li>
+                  <span>App Devolepment</span><br />Bulding Android/IOS apps
+                </li>
+              </ul>
+              <!-- Buat id sesuai dengan onclick tadi, + perlu js -->
+            </div>
+
+            <!-- Deskripsi experience -->
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span>2021 - Current</span><br />UI/UX Design Training at Et
+                  Institute
+                </li>
+                <li><span>2019 - 2021</span><br />Team lead at StarApp LLC.</li>
+                <li>
+                  <span>2017 - 2019</span><br />Internship at ekart eCommerce
+                </li>
+              </ul>
+            </div>
+
+            <!-- Deskripsi education -->
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <span>2016</span><br />UI/UX Design Training at Et Institute
+                </li>
+                <li><span>2018</span><br />MBA from MIT Singapore</li>
+                <li><span>2016</span><br />BBA from ISM Indonesia</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ------------Service----------- -->
+    <div class="services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+            <i class="fa-sharp fa-solid fa-code"></i>
+            <h2>Web Design</h2>
+            <p>
+              Seorang web designer adalah seorang profesional kreatif yang
+              mengkhususkan diri dalam merancang tampilan visual dan fungsional
+              dari sebuah website.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-crop-simple"></i>
+            <h2>UI/UX Design</h2>
+            <p>
+              Seorang UI/UX designer bertanggung jawab dalam merancang
+              pengalaman pengguna yang intuitif dan menarik dalam desain
+              antarmuka aplikasi.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+
+          <div>
+            <i class="fa-brands fa-app-store"></i>
+            <h2>App Design</h2>
+            <p>
+              Seorang pengembang aplikasi bertanggung jawab dalam mengembangkan
+              kode dan membangun fungsionalitas aplikasi sesuai dengan kebutuhan
+              dan spesifikasi yang telah ditentukan.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------Portofolio------------ -->
+    <div id="portofolio">
+      <div class="container">
+        <h1 class="sub-titles">My Work</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/work-1.png" />
+            <div class="layer">
+              <h3>Sosial Media App</h3>
+              <p>
+                The app connects you to the talented people around the world.
+                Download it from play store.
+              </p>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          <div class="work">
+            <img src="images/work-2.png" />
+            <div class="layer">
+              <h3>Music App</h3>
+              <p>
+                The app connects you to the talented people around the world.
+                Download it from play store.
+              </p>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+          </div>
+
+          <div class="work">
+            <img src="images/work-3.png" />
+            <div class="layer">
+              <h3>Online Shopping App</h3>
+              <p>
+                The app connects you to the talented people around the world.
+                Download it from play store.
+              </p>
+              <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+      </div>
+    </div>
+
+    <!-- ---------Contact----------- -->
+    <div class="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-titles">Contact Me</h1>
+            <p><i class="fa-sharp fa-solid fa-share"></i> Email : listyoblaze.uzu@gmail.com</p>
+            <p><i class="fa-brands fa-whatsapp"></i> 085225559860</p>
+            <div class="sosial-icon">
+              <a href="https://www.facebook.com/arisca.pramalistyo.9"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a href="https://www.instagram.com/tyo_ariezca/"
+                ><i class="fa-brands fa-square-instagram"></i
+              ></a>
+              <a href="https://github.com/AriscaPramalistyo05"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"
+                ><i class="fa-regular fa-envelope"></i
+              ></a>
+            </div>
+            <a href="btn">Download Cv</a>
+          </div>
+
+          <div class="contact-right">
+            <form>
+              <input type="text" name="Name" placeholder="Your Name" required>
+              <input type="email" name="email" placeholder="Your Email" required>
+              <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- File js -->
+
+    <script>
+      // -------start --------
+      // Membuat ketika skills ditekan menghidden desripsi
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link"); //Memindahkan garis bawah/active ke experience maupun education
+        document.getElementById(tabname).classList.add("active-tab"); //Membuat ketika skills ditekan memunculkan desripsi
+      }
+    </script>
+  </body>
+</html>
