@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body> <!--konten utama-->
+    
+        <div class="container"> <!--Kelas Utama-->
+          <h2>Program Nilai Mahasiswa</h2>
+    
+          <div class="card"> <!--Div.card-->
+            <form id="nilaiForm"> <!--Wadah utk input-->
+              <!-- Input NIM -->
+              <label for="nim">NIM:</label>
+              <input
+                type="text"
+                id="nim"
+                name="nim"
+                placeholder="Masukkan Nim Mahasiswa"
+                required
+              />
+    
+              <!-- Input NAMA -->
+              <label for="nama">NAMA:</label>
+              <input
+                type="text"
+                id="nama"
+                name="nama"
+                placeholder="Masukkan Nama Mahasiswa"
+                required
+              />
+    
+              <!-- Pilihan Matkul -->
+              <label for="matkul">Mata Kuliah:</label>
+              <select id="matkul" name="matkul">
+                <option value="">Pilih Matkul</option>
+                <option value="pemrograman">Pemrograman</option>
+                <option value="basis data">Basis Data</option>
+                <option value="jaringan">Jaringan</option>
+                <option value="sistem operasi">Sistem Operasi</option>
+                <option value="algoritma">Algoritma</option>
+                <option value="struktur data">Struktur Data</option>
+                <option value="teori komputasi">Teori Komputasi</option>
+                <option value="grafika komputer">Grafika Komputer</option>
+                <option value="kecerdasan buatan">Kecerdasan Buatan</option>
+                <option value="robotika">Robotika</option>
+              </select>
+    
+              <!-- Input Nilai -->
+              <div class="nilai"><!--div.nilai-->
+                <label for="uts">Nilai Uts :</label>
+                <input
+                  type="number"
+                  id="uts"
+                  min="0"
+                  placeholder="Masukkan nilai Uts"
+                />
+    
+                <label for="uas">Nilai Uas :</label>
+                <input
+                  type="number"
+                  id="uas"
+                  min="0"
+                  placeholder="Masukkan nilai Uas"
+                />
+    
+                <label for="tugas">Tugas Harian :</label>
+                <input
+                  type="number"
+                  id="tugas"
+                  min="0"
+                  placeholder="Masukkan nilai tugas"
+                />
+              </div>
+    
+              <!-- Button Hitung dan Reset -->
+              <div class="tombol"><!--Div.tombol-->
+                <button class="htn" type="button" onclick="hitungNilai()">
+                  Hitung
+                </button>
+                <button class="htn-rst" type="button" onclick="resetForm()">
+                  Reset
+                </button>
+              </div>
+            </form>
+          </div>
+    
+          <!-- Form Output -->
+          <div class="card">
+            <div class="card-header">
+              <h2>Ringkasan Nilai</h2>
+            </div>
+            <div class="card-body">
+              <table>
+                <tr>
+                  <td>Nama:</td>
+                  <td id="outputNama"></td>
+                </tr>
+                <tr>
+                  <td>NIM:</td>
+                  <td id="outputNim"></td>
+                </tr>
+                <tr>
+                  <td>Mata Kuliah:</td>
+                  <td id="outputMatkul"></td>
+                </tr>
+                <tr>
+                  <td>Nilai UTS:</td>
+                  <td id="outputUts"></td>
+                </tr>
+                <tr>
+                  <td>Nilai UAS:</td>
+                  <td id="outputUas"></td>
+                </tr>
+                <tr>
+                  <td>Nilai Tugas:</td>
+                  <td id="outputTugas"></td>
+                </tr>
+              </table>
+              <table>
+                <tr>
+                  <!-- Mengatur jaraknya menggunakan style="width:" -->
+                  <div class="card-body-end">
+                    <table id="priceTable" style="border: 1px solid black">
+                      <tr>
+                        <th>Nilai Akhir :</th>
+                        <th>Nilai Huruf : </th>
+                        <th>Indeks Nilai : </th>
+                      </tr>
+                      <tr>
+                        <td id="outputAkhir"></td>
+                        <td id="outputNilaiHuruf"></td>
+                        <td id="outputIndeksNilai"></td>
+                      </tr>
+                    </table>
+                  </div>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        
+        <!-- button tugas -->
+        <center>
+          <button onclick="loadTugasUts2()">Tugas UTS 2</button>
+          <button onclick="loadTugasUts3()">Tugas UTS 3</button>
+        </center>
+      
+
+  <script src="../Tugas_Uts1/script.js"></script>
+
+        <!-- Link ke file external JS -->
+        <script src="script.js"></script>
+        <!-- <button onclick="hitungNilai()"></button> -->
+        
+        
+</body>
+</html>

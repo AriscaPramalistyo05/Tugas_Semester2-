@@ -1,0 +1,135 @@
+body {
+  font-family: "Courier New", monospace;
+}
+
+/* Untuk mengatur lebar maks class form dan membuat terpusat secara horizontal */
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Mengatur tampilan tabel pada class form */
+.form label {
+  display: block;
+  /* label akan ditampilkan sebagai blok elemen, sehingga label akan menempati satu baris penuh dan elemen berikutnya akan ditampilkan pada baris baru */
+  margin-bottom: 5px;
+  /* memberikan jarak sebesar 5 piksel antara label dengan elemen berikutnya */
+}
+
+/* Mengatur elemen select,input number & text */
+select,
+input[type="number"],
+input[type="text"] {
+  width: 100%;
+  height: 30px;
+  /* Tinggi elemen */
+  margin-bottom: 15px;
+  /* Jarak antar elemen */
+  border: 1px solid #ccc;
+  /* menambahkan border dengan ketebalan 1 piksel dan warna */
+  border-radius: 4px;
+  /* Radius sudut menjadi lingkaran */
+}
+
+/* Belum ket */
+.form .tombol button {
+  height: 50px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+/* Mengatur ukuran tombol hitung */
+.htn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Mengatur warna dan ukuran saat disentuh */
+.htn:hover {
+  background-color: #ff0000;
+  transform: scale(1.05);
+}
+
+/* Mengatur ukuran tombol reset */
+.htn-rst {
+  background-color: #ff0000;
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Mengatur warna dan ukuran saat disentuh */
+.htn-rst:hover {
+  background-color: #cccccc;
+  transform: scale(1.05);
+  color: black;
+}
+
+.card {
+  background:linear-gradient(#84fab0,#8fd3f4);
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.card table {
+  width: 100%;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid black;
+}
+
+#result {
+  font-weight: bold;
+}
+
+#priceTable th {
+  background-color: #19a7ce;
+  color: rgb(21, 1, 1);
+  text-align: center;
+  font-weight: bolder;
+}
+
+#priceTable td {
+  text-align: center;
+  font-weight: bold;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff004f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+button:hover {
+  background-color: #d90046;
+}
