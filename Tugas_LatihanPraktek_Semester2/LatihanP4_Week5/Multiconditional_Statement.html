@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Program Push Up</title>
+  </head>
+  <body>
+    <h2>Masukkan jumlah push up yang kamu lakukan:</h2>
+    <input type="number" id="jumlah_pushup_input" />
+    <button onclick="hitungHasil()">Hitung</button>
+    <h1 id="hasil_pushup"></h1>
+
+    <script>
+      function hitungHasil() {
+        let jumlah_pushup = document.getElementById("jumlah_pushup_input").value;  // Mengambil nilai input menggunakan '.value'
+
+        if (jumlah_pushup > 60) {
+          document.write("WAH, kamu hebat");
+        } else if (jumlah_pushup > 35) {
+          document.write("Terus latih fisikmu");
+        } else {
+          document.write("Kamu mageran ya!");
+        }
+
+        document.getElementById("hasil_pushup").innerText = hasil;  // Variabel 'hasil' tidak didefinisikan sebelumnya, perlu diubah menjadi 'jumlah_pushup'
+      }
+    </script>
+  </body>
+</html>

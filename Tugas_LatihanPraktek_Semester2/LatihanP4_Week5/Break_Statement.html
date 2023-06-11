@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contoh Break Statement</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 7px;
+    }
+  </style>
+  <body>
+    <h1>Contoh Break Statement</h1>
+    <button onclick="cariAngka()">Cari Angka 5</button>
+    <p id="hasil"></p>
+
+    <script>
+      function cariAngka() {
+        var angka = [2, 4, 6, 8, 10, 5, 12];
+        var hasil = document.getElementById("hasil");
+
+        for (var i = 0; i < angka.length; i++) {
+          if (angka[i] === 5) {
+            hasil.innerHTML = "Angka 5 ditemukan pada indeks ke-" + i;
+            break;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

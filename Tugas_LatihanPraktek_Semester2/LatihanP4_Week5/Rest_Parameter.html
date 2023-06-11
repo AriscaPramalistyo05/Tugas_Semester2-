@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rest Parameter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      pre {
+        background-color: #f2f2f2;
+        padding: 10px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Rest Parameter</h1>
+
+    <button onclick="displayOutput()">Click On</button>
+
+    <pre id="output"></pre>
+    <br />
+    <h5>
+      Rest Parameter digunakan untuk mengakomodasi jumlah argumen yang tidak
+      terbatas dalam sebuah fungsi.
+    </h5>
+    <h5>
+      Contoh ini menjumlahkan sejumlah angka yang diberikan sebagai argumen saat
+      memanggil fungsi "ram". Output akan ditampilkan pada halaman web setelah
+      tombol "Click On" ditekan.
+    </h5>
+
+    <script>
+      function ram(...numbers) {
+        let total = 0;
+        for (let number of numbers) {
+          total += number;
+        }
+        return total;
+      }
+
+      function displayOutput() {
+        const outputElement = document.getElementById("output");
+        outputElement.textContent =
+          "Output dari 1+2+3+4+5 = " + ram(1, 2, 3, 4, 5) + "\n";
+        outputElement.textContent +=
+          "Output dari 10+20 = " + ram(10, 20) + "\n";
+        outputElement.textContent +=
+          "Output dari 1+2+3 = " + ram(1, 2, 3) + "\n";
+      }
+    </script>
+  </body>
+</html>

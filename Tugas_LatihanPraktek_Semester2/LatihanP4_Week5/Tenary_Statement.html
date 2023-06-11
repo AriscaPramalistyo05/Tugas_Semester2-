@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tenary</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+    }
+
+    .card {
+      background: gray;
+      border-radius: 10px;
+      padding: 5px 15px 10px;
+      text-align: center;
+    }
+
+    select,
+    input[type="number"] {
+      border-radius: 20px;
+      width: 150px;
+      height: 30px;
+      border: 1px solid #222;
+      margin: 5px;
+    }
+
+    button {
+      border-radius: 5px;
+      border: 1px solid #222;
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Contoh Program true false dan bilangan bulat -->
+  <div class="card">
+    <h2>Masukkan jumlah angkanya :</h2>
+    <input type="number" id="angka1" />
+    <select id="Hy">
+      <option value="besar">besar(>)</option>
+      <option value="kecil">kecil(&gt;)</option>
+      <option value="equals">sama (=)</option>
+      <option value="not_equals">Tdk sama(!=)</option>
+      <option value="besar/sama">besar/sama(>=)</option>
+      <option value="kecil/sama">kecil/sama(&gt;=)</option>
+    </select>
+    <input type="number" id="angka2" />
+    <button onclick="hitungHasil()">Hitung</button>
+    <h1 id="hasil"></h1>
+  </div>
+
+  <hr />
+
+  <!-- Contoh Program string -->
+  <div class="card">
+    <h2>Masukkan jumlah angkanya :</h2>
+    <input type="number" id="angka3" />
+    <select id="Hy1">
+      <option value="besar">besar(>)</option>
+      <option value="kecil">kecil(&gt;)</option>
+    </select>
+    <input type="number" id="angka4" />
+    <button onclick="hitungHasil1()">Hitung</button>
+    <h1 id="hasil1"></h1>
+  </div>
+
+  <script>
+    // Fungsi program 1
+    function hitungHasil() {
+      let angka1 = parseInt(document.getElementById("angka1").value);
+      let operator = document.getElementById("Hy").value;
+      let angka2 = parseInt(document.getElementById("angka2").value);
+      let hasil;
+
+      hasil =
+        operator === "besar"
+          ? angka1 > angka2
+          : operator === "kecil"
+          ? angka1 < angka2
+          : operator === "equals"
+          ? angka1 == angka2
+          : operator === "not_equals"
+          ? angka1 != angka2
+          : operator === "besar/sama"
+          ? angka1 >= angka2
+          : operator === "kecil/sama"
+          ? angka1 <= angka2
+          : false;
+
+      document.getElementById("hasil").innerText = hasil ? "Benar" : "Salah";
+    }
+
+    // Fungsi program 2
+    function hitungHasil1() {
+      let angka3 = parseInt(document.getElementById("angka3").value);
+      let operator = document.getElementById("Hy1").value;
+      let angka4 = parseInt(document.getElementById("angka4").value);
+      let hasil;
+
+      hasil1 =
+        operator === "besar"
+          ? angka3 > angka4
+            ? "Nilai " + angka3 + " Lebih besar dari " + angka4 + " Benar"
+            : "Nilai " + angka3 + " Lebih besar dari " + angka4 + " Salah"
+          : operator === "kecil"
+          ? angka3 < angka4
+            ? "Nilai " + angka3 + " Lebih kecil dari " + angka4 + " Benar"
+            : "Nilai " + angka3 + " Lebih kecil dari " + angka4 + " Salah"
+          : "Operator tidak valid. Masukkan operator yang valid.";
+
+      document.getElementById("hasil1").innerText = hasil1;
+    }
+  </script>
+</body>
+</html>

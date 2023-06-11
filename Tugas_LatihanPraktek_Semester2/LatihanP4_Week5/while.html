@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>While Loop Example</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        color: blue;
+      }
+
+      p {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .card {
+        margin-top: 20px;
+        width: 80%;
+        padding: 20px;
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>While Loop Example</h1>
+    <p id="output"></p>
+
+    <!-- Javascript -->
+    <script>
+      let i = 10;
+      let output = "";
+
+      while (i >= 1) {
+        output += i + "<br>";
+        i--;
+      }
+      document.getElementById("output").innerHTML = output;
+    </script>
+
+    <div class="card">
+      <h5>
+        While statement adalah struktur kontrol dalam JavaScript yang melakukan
+        iterasi atau pengulangan selama kondisi yang diberikan benar (true). Ini
+        berarti blok kode yang terkait akan terus dieksekusi selama kondisi yang
+        diberikan tetap benar. Jika kondisi awalnya salah, maka blok kode tidak
+        akan pernah dieksekusi.
+      </h5>
+      <h5>
+        Penggunaan while statement berguna ketika kita ingin melakukan iterasi
+        berulang berdasarkan kondisi yang mungkin berubah selama proses.
+      </h5>
+    </div>
+  </body>
+</html>

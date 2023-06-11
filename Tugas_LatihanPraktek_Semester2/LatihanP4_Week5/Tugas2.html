@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        text-align: center;
+        margin-top: 100px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+      }
+      .output {
+        font-size: 30px;
+        font-family: "Lucida Hand Writing", Forte, Cursive;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Contoh Function</h1>
+      <!-- Parameter Type Function -->
+      <button onclick="sayHello(' Aris')">Sapaan</button>
+      <!-- Rest Parameter Function -->
+      <button onclick="calculateSum(5, 10, 15)">Jumlahkan </button>
+      <div id="output" class="output"></div>
+    </div>
+
+    <script>
+      function sayHello(name) {
+        var greeting = "Hello, " + name + "!";
+        document.getElementById("output").innerHTML = greeting;
+      }
+
+      function calculateSum(...numbers) {
+        var sum = 0;
+        if (numbers.length > 0) {
+          sum = numbers.reduce((acc, curr) => acc + curr);
+        }
+        document.getElementById("output").innerHTML = "Jumlahnya : " + sum;
+      }
+    </script>
+  </body>
+</html>
+
+<!-- Fungsi sayHello merupakan fungsi sederhana yang menerima satu parameter name. Fungsi ini akan mengembalikan sebuah pesan salam yang terdiri dari "Hello" dan nama yang diberikan.
+Fungsi calculateSum merupakan fungsi yang menggunakan rest parameter (...numbers) untuk menerima sejumlah argumen yang akan dijumlahkan. Fungsi ini akan menghitung jumlah dari seluruh argumen yang diberikan dan mengembalikan hasilnya. Jika tidak ada argumen yang diberikan, fungsi ini akan mengembalikan nilai 0 sebagai default parameter. -->

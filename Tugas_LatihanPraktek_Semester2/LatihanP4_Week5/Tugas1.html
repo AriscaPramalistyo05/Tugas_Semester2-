@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tugas4</title>
+    <title>Tes Seleksi Tinggi Badan</title>
+    <style>
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .card {
+        background-color: #2196f3;
+        padding: 20px;
+        border-radius: 5px;
+      }
+      .card-header {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .masuk {
+        margin-bottom: 10px;
+      }
+
+      /* Mengatur ukuran checkbox */
+      select,
+      input[type="number"],
+      input[type="text"] {
+        width: 90%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 10px;
+        width: 95%;
+      }
+      .btn {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      #hasil {
+        text-align: center;
+        font-size: 24px;
+        margin-top: 20px;
+        color: antiquewhite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <!-- Header -->
+        <div class="card-header">
+          <h1>Tes Seleksi Tinggi Badan</h1>
+        </div>
+        <!-- Form Input -->
+        <div class="card-body">
+          <!-- Input nama -->
+          <div class="masuk">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" />
+          </div>
+
+          <!-- Input Jenis kelamin -->
+          <div class="masuk">
+            <label for="jenisKelamin">Jenis Kelamin:</label>
+            <select id="jenisKelamin" name="jenisKelamin">
+              <option value="Laki-laki">Laki-laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
+          </div>
+
+          <!-- Input Tinggi badan -->
+          <div class="masuk">
+            <label for="tinggi">Tinggi (cm):</label>
+            <input type="text" id="tinggi" name="tinggi" />
+          </div>
+
+          <!-- Button Hitung -->
+          <div class="masuk">
+            <button type="button" class="btn" onclick="hitungTinggiBadan()">
+              Hitung
+            </button>
+          </div>
+          <div id="hasil" style="text-align: center; font-size: 24px"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function hitungTinggiBadan() {
+        var nama = document.getElementById("nama").value;
+        var jenisKelamin = document.getElementById("jenisKelamin").value;
+        var tinggi = parseFloat(document.getElementById("tinggi").value);
+        var output = "";
+
+        switch (jenisKelamin) {
+          case "Laki-laki":
+            if (tinggi >= 170) {
+              output =
+                "Selamat " + nama + ", Anda lulus tes seleksi tinggi badan!";
+            } else {
+              output =
+                "Maaf " + nama + ", Anda belum lulus tes seleksi tinggi badan.";
+            }
+            break;
+          case "Perempuan":
+            if (tinggi >= 160) {
+              output =
+                "Selamat " + nama + ", Anda lulus tes seleksi tinggi badan!";
+            } else {
+              output =
+                "Maaf " + nama + ", Anda belum lulus tes seleksi tinggi badan.";
+            }
+            break;
+          default:
+            output = "Pilih jenis kelamin yang valid.";
+        }
+
+        document.getElementById("hasil").innerHTML = output;
+      }
+    </script>
+  </body>
+</html>

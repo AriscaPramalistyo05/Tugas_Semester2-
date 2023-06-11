@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>For Statement</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .example {
+        width: 30%;
+        padding: 20px;
+        background-color: #f2f2f2;
+        margin: 30px;
+      }
+
+      .card {
+        background-color: #cecece;
+        border-radius: 8px;
+        padding: 10px 5px 5px 7px; /* Urutan atas,kana,bawah,kiri */
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      p {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>For Statement</h1>
+    <p>Angka & Karakter</p>
+    <div class="container">
+      <div class="example">
+        <h2>Example 1</h2>
+        <script>
+          // Example 1
+          for (let i = 0; i < 5; i++) {
+            document.write(i + " ,");
+          }
+        </script>
+      </div>
+      <div class="example">
+        <h2>Example 2</h2>
+        <script>
+          // Example 2
+          const cars = ["Subaru, ", "BMW, ", "Supra"];
+          for (let i = 0; i < cars.length; i++) {
+            document.write(cars[i]);
+          }
+        </script>
+      </div>
+    </div>
+    <div class="card">
+      <h5>
+        For statement adalah struktur kontrol yang digunakan untuk melakukan
+        iterasi dengan jumlah iterasi yang sudah diketahui sebelumnya. Ini
+        terdiri dari tiga bagian: inisialisasi variabel, kondisi, dan perubahan
+        variabel. For statement akan terus dieksekusi selama kondisi terpenuhi.
+      </h5>
+      <h5>
+        For statement sering digunakan ketika kita mengetahui jumlah iterasi
+        yang pasti dan ingin melakukan pengulangan berdasarkan indeks.
+      </h5>
+    </div>
+  </body>
+</html>

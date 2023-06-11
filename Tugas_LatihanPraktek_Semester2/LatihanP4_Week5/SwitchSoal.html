@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz Switch</title>
+  </head>
+  <body>
+    <h1>Quiz Switch</h1>
+    <p>Pilih jawaban yang benar:</p>
+    <p>1. Siapakah presiden pertama Indonesia?</p>
+    <input type="radio" name="jawaban1" value="a" />a. Soekarno<br />
+    <input type="radio" name="jawaban1" value="b" />b. Joko Widodo<br />
+    <input type="radio" name="jawaban1" value="c" />c. Megawati Soekarnoputri<br />
+    <button onclick="tampilkan()">Jawab</button>
+    <p id="hasil"></p>
+
+    <script>
+      function tampilkan() {
+        var jawaban1 = document.querySelector(
+          'input[name="jawaban1"]:checked'
+        ).value;
+        var hasil = "";
+        switch (jawaban1) {
+          case "a":
+            hasil = "Jawaban Anda benar!";
+            break;
+          case "b":
+            hasil = "Jawaban Anda salah.";
+            break;
+          case "c":
+            hasil = "Jawaban Anda salah.";
+            break;
+          default:
+            hasil = "Anda belum memilih jawaban.";
+            break;
+        }
+        document.getElementById("hasil").innerHTML = hasil;
+      }
+    </script>
+  </body>
+</html>

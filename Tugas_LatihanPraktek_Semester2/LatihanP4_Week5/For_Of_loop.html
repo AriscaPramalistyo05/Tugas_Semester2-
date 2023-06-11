@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For...of Loop</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #output {
+        margin-top: 20px;
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 30px;
+      }
+      .card {
+        background-color: #cecece;
+        border-radius: 8px;
+        padding: 10px 5px 5px 7px; /* Urutan atas,kana,bawah,kiri */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>For...of Loop</h1>
+    <button onclick="runLoop()">Run Loop</button>
+    <div id="output"></div>
+
+    <div class="card">
+      <h5>
+        For...of statement digunakan untuk mengulangi elemen-elemen dari objek
+        yang dapat diulang seperti array, string, Map, Set, dll. Ini
+        menyederhanakan sintaksis pengulangan dan memungkinkan akses langsung ke
+        nilai elemen saat melakukan iterasi.
+      </h5>
+      <h5>
+        For...of statement berguna ketika kita ingin melakukan literasi
+        elemen-elemen dalam objek yang dapat diulang.
+      </h5>
+      <h6>
+        Dalam membuat animasi kata per kata saya menggunakan const interval =
+        setInterval(() => { ... }, 500); dimana durasi animasinya 500
+        miliseconds.
+      </h6>
+    </div>
+    <script>
+      function runLoop() {
+        const fruits = ["Apple", "Banana", "Orange"];
+
+        let index = 0;
+        let output = "";
+        const interval = setInterval(() => {
+          if (index >= fruits.length) {
+            clearInterval(interval);
+          } else {
+            output += fruits[index] + "<br>";
+            document.getElementById("output").innerHTML = output;
+            index++;
+          }
+        }, 500);
+      }
+      // Dalam membuat animasi kata per kata saya menggunakan const interval = setInterval(() => { ... }, 500); dimana durasi animasinya 500 miliseconds
+    </script>
+  </body>
+</html>

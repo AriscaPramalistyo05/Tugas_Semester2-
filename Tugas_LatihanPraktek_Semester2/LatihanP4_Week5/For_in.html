@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      width: 30%;
+      padding: 20px;
+      background-color: #f2f2f2;
+     
+    }
+
+    .card2 {
+      width: 70%;
+      padding: 20px;
+      background-color: #dadada;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Contoh For In</h2>
+    <script>
+      // Example 3
+      const person = { Name: "Mei <br/> ", Age: 20 + "<br/>", City: "Kayen" };
+      for (let c in person) {
+        console.log(c + ": " + person[c]);
+        document.write(c + ": " + person[c]);
+      }
+    </script>
+  </div>
+  <div class="card">
+    <h2>Contoh For In 2</h2>
+    <script>
+      // Example 2
+      let kk = [1882, 1920, 2002, 2040];
+      for (let index in kk) {
+        document.write("<br/>"+index+"<br/>");
+        document.write(kk[index]);
+      }
+    </script>
+  </div>
+  <div class="card2">
+    <h5>
+      For...in statement digunakan untuk mengulangi properti-properti enumerable dari objek. Ini akan mengulangi semua properti enumerable di objek dan juga properti yang diturunkan melalui rantai prototipe objek.
+    </h5>
+    <h5>For...in statement berguna ketika kita ingin mengulangi properti-properti dalam objek.</h5>
+  </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do-While</title>
+<style>
+  .card {
+    background-color: salmon;
+    border-radius: 8px;
+    padding: 10px 5px 5px 7px ; /* Urutan atas,kana,bawah,kiri */
+  }
+</style>
+  </head>
+  <body>
+    <h1>Do While Loop</h1>
+    <p id="output"></p>
+    <div class="card">
+      <h5>Do-while statement adalah struktur kontrol yang mirip dengan while statement. Perbedaannya adalah do-while akan mengeksekusi blok kode terlebih dahulu, kemudian memeriksa kondisi setelah itu. Jika kondisi terpenuhi, maka blok kode akan terus dieksekusi, dan jika tidak, perulangan berhenti.</h5>
+      <h5>Do-wile statement berguna ketika kita ingin memastikan bahwa setidaknya satu literasi dilakukan sebelum memeriksa kondisi</h5>
+    </div>
+  
+    <script>
+      let i = 0;
+      let output = "";
+
+      do {
+        i += 1;
+        output += i + "<br>";
+        i++;
+      } while (i < 5);
+
+      document.getElementById("output").innerHTML = output;
+    </script>
+  </body>
+</html>
+<!-- Hasil 1,3,5 -->
+<!-- Lakukan banyak percobaan -->

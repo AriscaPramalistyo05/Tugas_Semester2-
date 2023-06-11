@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Default Parameter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      pre {
+        background-color: #f2f2f2;
+        padding: 10px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Default Parameter Program</h1>
+
+    <button onclick="jalan()">Click On</button>
+
+    <pre id="output"></pre>
+    <br />
+    <h5>
+      Default Parameter digunakan untuk memberikan nilai default jika tidak
+      argumen tidak disediakan saat dieksekusi
+    </h5>
+    <h5>
+      Saat argumen "name" tidak disediakan saat pemanggilan fungsi "call", nilai
+      default "Master" akan dugunakan. Output yang keluar "Ohayo Master!!".
+    </h5>
+
+    <script>
+      function jalan() {
+        // Program menggunakan default parameter
+        function call(name = "Master") {
+          return "Ohayo, " + name + "!!";
+        }
+
+        // Menjalankan program dan menampilkan output di halaman web
+        var outputElement = document.getElementById("output");
+        outputElement.textContent = call();
+      }
+    </script>
+  </body>
+</html>

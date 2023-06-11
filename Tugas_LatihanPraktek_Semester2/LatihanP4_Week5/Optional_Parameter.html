@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Optional Parameter</title>
+    <style>
+      .card {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+        background-color: #fff;
+        margin: 10px;
+        padding-bottom: 10px;
+      }
+
+      h4 {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+      h2 {
+        /* gaya-gaya lainnya */
+        font-size: 24px;
+        margin-top: 5px; /* tambahkan margin atas pada h2 */
+        margin-bottom: 5px; /* tambahkan margin bawah pada h2 */
+      }
+
+      input[type="number"] {
+        font-size: 18px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-right: 10px;
+        width: 30%;
+      }
+
+      select {
+        font-size: 18px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-right: 12px;
+      }
+
+      button {
+        font-size: 18px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+        margin-right: 10px;
+      }
+
+      button:hover {
+        background-color: #3e8e41;
+      }
+
+      #result {
+        font-size: 18px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h4>Optional Parameter</h4>
+      <h2>Konversi Suhu</h2>
+      <input type="number" id="temp" name="temp" placeholder="Masukkan suhu" />
+      <select id="from" name="from">
+        <option value="celsius">Celsius</option>
+        <option value="fahrenheit">Fahrenheit</option>
+        <option value="kelvin">Kelvin</option>
+      </select>
+      <button onclick="convert()">Konversi Ke</button>
+      <select id="to" name="to">
+        <option value="celsius">Celsius</option>
+        <option value="fahrenheit">Fahrenheit</option>
+        <option value="kelvin">Kelvin</option>
+      </select>
+      <p id="result"></p>
+    </div>
+    <p>
+      Optional parameter dalam JavaScript memungkinkan pengguna untuk
+      mengabaikan atau tidak mengisi nilai saat memanggil fungsi, dengan
+      memberikan nilai default kepada parameter tersebut untuk digunakan jika
+      tidak diisi. Hal ini memberikan fleksibilitas dalam penggunaan fungsi,
+      terutama ketika terdapat parameter yang bersifat opsional atau tidak
+      selalu diperlukan dalam setiap situasi.
+    </p>
+
+    <script>
+      function convert(temp = 0, from = "celsius", to = "celsius") {
+        temp = parseInt(document.getElementById("temp").value) || temp;
+        from = document.getElementById("from").value || from;
+        to = document.getElementById("to").value || to;
+        var result = document.getElementById("result");
+        if (from == "celsius") {
+          if (to == "fahrenheit") {
+            result.innerHTML =
+              "Hasil konversi: " + ((temp * 9) / 5 + 32) + "°F";
+          } else if (to == "kelvin") {
+            result.innerHTML = "Hasil konversi: " + (temp + 273.15) + "K";
+          } else {
+            result.innerHTML = "Hasil konversi: " + temp + "°C";
+          }
+        } else if (from == "fahrenheit") {
+          if (to == "celsius") {
+            result.innerHTML =
+              "Hasil konversi: " + ((temp - 32) * 5) / 9 + "°C";
+          } else if (to == "kelvin") {
+            result.innerHTML =
+              "Hasil konversi: " + (((temp - 32) * 5) / 9 + 273.15) + "K";
+          } else {
+            result.innerHTML = "Hasil konversi: " + temp + "°F";
+          }
+        } else {
+          if (to == "celsius") {
+            result.innerHTML = "Hasil konversi: " + (temp - 273.15) + "°C";
+          } else if (to == "fahrenheit") {
+            result.innerHTML =
+              "Hasil konversi: " + (((temp - 273.15) * 9) / 5 + 32) + "°F";
+          } else {
+            result.innerHTML = "Hasil konversi: " + temp + "K";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

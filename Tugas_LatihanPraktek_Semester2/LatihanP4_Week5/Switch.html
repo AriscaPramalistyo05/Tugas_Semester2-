@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Program Pilih Warna</title>
+    <script>
+      function pilihWarna() {
+        let warna = document.getElementById("pilihanWarna").value;
+        let elemen = document.getElementById("elemen");
+
+        switch (warna) {
+          case "merah":
+            elemen.style.color = "red";
+            break;
+          case "hijau":
+            elemen.style.color = "green";
+            break;
+          case "biru":
+            elemen.style.color = "blue";
+            break;
+          default:
+            elemen.style.color = "black";
+            break;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="elemen">Warna Teks</h1>
+    <select id="pilihanWarna" onchange="pilihWarna()">
+      <option value="merah">Merah</option>
+      <option value="hijau">Hijau</option>
+      <option value="biru">Biru</option>
+    </select>
+  </body>
+</html>
+
+<!-- /* efek terakhir 
+.neon-btn:hover {
+  color: #255784;
+  background: #2196f3;
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+  transition-delay: 1s;
+} */ -->

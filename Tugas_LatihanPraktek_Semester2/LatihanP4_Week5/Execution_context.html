@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Execution Context</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      #result {
+        padding: 10px;
+        background-color: #f2f2f2;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Contoh Execution Context</h1>
+    <button onclick="show()">Tampilkan</button>
+    <div id="result"></div>
+
+    <script>
+      function show() {
+        var result = document.getElementById("result");
+        result.innerHTML = "";
+
+        function outer() {
+          displayContext("Global Execution Context");
+
+          function inner() {
+            displayContext("Functional Execution Context");
+          }
+
+          inner();
+        }
+
+        outer();
+      }
+
+      function displayContext(context) {
+        var result = document.getElementById("result");
+        result.innerHTML += context + "<br>";
+      }
+    </script>
+  </body>
+</html>
