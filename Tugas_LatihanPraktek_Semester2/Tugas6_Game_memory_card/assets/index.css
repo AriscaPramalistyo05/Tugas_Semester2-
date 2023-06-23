@@ -1,0 +1,41 @@
+.container {
+    position: relative;
+    text-align: center;
+    height: 100vh;
+  }
+  
+  .start-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .start-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .start-container input[type="button"] {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12%;
+    height: 10%;
+    border-radius: 20px;
+    font-size: 150%;
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.5s ease; /* Menambahkan efek transisi warna latar belakang */
+  }
+  
+  .start-container input[type="button"]:hover {
+    background-color: #000; /* Warna latar belakang berubah saat dihover */
+    color: #fff; /* Warna teks berubah saat dihover */
+    animation: loadingEffect 2s infinite linear; /* Menambahkan animasi efek loading */
+  }
+  
