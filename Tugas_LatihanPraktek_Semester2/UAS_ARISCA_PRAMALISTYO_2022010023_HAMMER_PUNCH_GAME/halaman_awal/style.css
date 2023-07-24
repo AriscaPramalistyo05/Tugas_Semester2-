@@ -1,0 +1,152 @@
+/* ===================== Mengatur semua elemen ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================== Elemen body ======================== */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #222222;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  place-items: center;
+  height: 110vh;
+
+}
+
+/* ================= Mengatur kelas container = kepala,isi,penutup body ================= */
+.container {
+  text-align: center;
+}
+
+/* ========================= Mengatur kepala ==================== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #222222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  /*  mengatur jarak atas gambar logo*/
+}
+
+/* ======================== Mengatur logo pojok kanan & kiri atas ===================== */
+.logo-left img,
+.logo-right img {
+  width: 80px;
+  height: 80px;
+  background: none;
+}
+
+/* ======================= Mengatur tombol masuk ke game ======================= */
+
+.start-button {
+  padding: 20px 68px;
+  font-size: 23px;
+  position: absolute;
+  bottom: 13%;
+  transform: translateX(-50%);
+  left: 33%;
+  border-radius: 30px;
+  box-shadow: 10px 12px #000;
+  border: 2px solid #000 !important;
+  transition: all ease-in 0.2s !important;
+
+}
+
+.start-button:hover {
+  background-color: #080000;
+  color: #fff;
+  border: 3px solid #fff;
+  box-shadow: none;
+}
+
+.mulai-tombol img {
+  display: inline-block;
+  width: 180px;
+  /* height: 40px; */
+  margin-right: 38%;
+  margin-top: 33%;
+  cursor: pointer;
+}
+
+
+
+
+/* =================== Mengatur penutup ====================== */
+footer {
+  background-color: #9e9e9e;
+  padding: 25px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  flex-wrap: wrap;
+}
+
+/* ========================== Mengatur logo sosmed ===================== */
+.social-media-link {
+  display: flex;
+  align-items: center;
+  /* margin-bottom: 0px; */
+}
+
+.social-media-link a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  margin: 0 10px;
+  /* margin-bottom: 10%; */
+  bottom: 5%;
+}
+
+.social-media-link a :hover {
+  color: #EDC001;
+}
+
+/* =========================== Mengatur tombol profil developer ======================== */
+.developer-profile {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.developer-profile a {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.developer-profile a:hover {
+  background-color: #690d0d;
+  color: #fff;
+  border-radius: 0;
+  border: 2px solid #fff;
+}
+
+/* ============================ Mengatur watermark pojok kanan bawah =========================== */
+.copyright {
+  text-align: right;
+  color: #000;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hammer Punch</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="level.css" />
+  </head>
+  <body>
+    <div class="atap">
+      <h2 id="nama-pemain"></h2>
+      <h1>Hammer Punch Virus</h1>
+      <h3>Level 4</h3>
+      <a class="mulai" onclick="mulaiPermainan()"
+        ><img src="./img/start.png"
+      /></a>
+      <h2 class="papan-skor">Skor : 0</h2>
+    </div>
+
+    <!-- Atur level dengan mengurai jumlah : -->
+
+    <div class="container">
+      <div class="perisai">
+        <div class="virus"></div>
+      </div>
+      <div class="perisai">
+        <div class="virus"></div>
+      </div>
+      <div class="perisai">
+        <div class="virus"></div>
+      </div>
+      <div class="perisai">
+        <div class="virus"></div>
+      </div>
+      <div class="perisai">
+        <div class="virus"></div>
+      </div>
+      <div class="perisai">
+        <div class="virus"></div>
+      </div>
+    </div>
+
+    <div id="result" class="card-popup">
+      <h2 id="result-message"></h2>
+      <p id="result-name"></p>
+      <p id="result-score"></p>
+      <p id="result-time"></p>
+      <h2 id="ucapan">SELAMAT PERMAINAN TELAH SELESAI</h2>
+    </div>
+
+    <!-- Audio pukul -->
+    <audio src="audio/smash.mp3" id="pop"></audio>
+
+    <!-- Javascript -->
+    <script src="level_4.js"></script>
+  </body>
+</html>
